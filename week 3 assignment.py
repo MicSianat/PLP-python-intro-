@@ -10,6 +10,7 @@ try:
     discount_percentage = float(input("Enter the discount percentage: ")) 
     #calculate the final price
     final_price = calculate_discount(original_price, discount_percentage)   
+    
     #print results
     if discount_percentage >= 20:
        print(f"The final price after discount is  :${final_price:.2f}")    
