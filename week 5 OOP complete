@@ -1,0 +1,42 @@
+class SamsungPhone:
+    def __init__(self, model, color, storage, price):
+        self.model = model
+        self.color = color
+        self.storage = storage
+        self.price = price
+    
+    def call(self, number):
+        print(f"Calling {number} from {self.model}...")
+    
+    def send_message(self, number, message):
+        print(f"Sending message to {number}: {message}")
+    
+    def display_info(self):
+        print(f"Model: {self.model}, Color: {self.color}, Storage: {self.storage}GB, Price: ${self.price}")
+
+# Creating an instance of SamsungPhone
+phone = SamsungPhone("Galaxy S21", "black", 128, 799)
+phone.display_info()
+phone.call("+255-565-547")
+phone.send_message("+255-565-547", "Hello, this is a test message!")
+
+
+class SamsungGalaxy(SamsungPhone):
+    def __init__(self, model, color, storage, price, camera_megapixels, battery_capacity):
+        super().__init__(model, color, storage, price)
+        self.camera_megapixels = camera_megapixels
+        self.battery_capacity = battery_capacity
+    
+    def take_photo(self):
+        print(f"Taking a photo with {self.camera_megapixels}MP camera.")
+    
+    def display_info(self):
+        super().display_info()
+        print(f"Camera: {self.camera_megapixels}MP, Battery: {self.battery_capacity}mAh")
+
+# Creating an instance of SamsungGalaxy
+galaxy_phone = SamsungGalaxy("Galaxy S21 Ultra", "Black", 256, 1199, 108, 5000)
+galaxy_phone.display_info()
+galaxy_phone.take_photo()
+galaxy_phone.call("+255-565-547")
+galaxy_phone.send_message("+255-565-547", "Hello from Galaxy S21 Ultra!")
